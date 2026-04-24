@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package benchmark;
+
+option go_package = "github.com/chimanjain/go-rest-grpc-benchmark/proto";
+
+service BenchmarkService {
+  rpc ProcessData (ProcessRequest) returns (ProcessResponse) {}
+}
+
+message ProcessRequest {
+  string id = 1;
+  string payload = 2;
+}
+
+message ProcessResponse {
+  string id = 1;
+  string result = 2;
+}
